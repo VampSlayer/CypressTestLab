@@ -15,10 +15,9 @@ jobs:
       - run: npm test
       - run: npm run serve
         env:
-          CI: true
-
-    steps:
+          CI: true       
       - uses: actions/checkout@v1
+      - name: Cypress Run
       - uses: cypress-io/github-action@v1
         with:
           browser: chrome
