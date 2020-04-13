@@ -14,8 +14,8 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - run: npm run serve
-      env:
-        CI: true
+        env:
+          CI: true
 
     steps:
       - uses: actions/checkout@v1
