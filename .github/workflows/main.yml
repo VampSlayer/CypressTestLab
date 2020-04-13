@@ -13,12 +13,4 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
-      - run: npm run serve
-        env:
-          CI: true
-          
-      - uses: cypress-io/github-action@v1
-      - name: Cypress Run
-        with:
-          browser: chrome
-          headless: true
+      - run: npm run test:ci
