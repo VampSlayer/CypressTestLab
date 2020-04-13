@@ -17,11 +17,9 @@ cache:
     - npm run cy:info
 
 script:
-  #   ## print all Travis environment variables for debugging
-  - $(npm bin)/print-env TRAVIS
   - npm run build
   - npm run serve:ci &
-  - npm run cypress:run -- --record --parallel --group $STAGE_NAME
+  - npm run cypress:run
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   - kill $(jobs -p) || true
